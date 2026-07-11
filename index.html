@@ -145,11 +145,97 @@
             line-height: 1.8;
         }
 
-        footer {
-            text-align: center;
-            padding: 0 20px 36px;
-            color: #78857b;
-            font-size: 0.9rem;
+        .stats-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 6px 20px 2px;
+        }
+
+        .stats-shell {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .stats-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .stats-header h2 {
+            margin: 0;
+        }
+
+        .stats-header p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .stat-card {
+            background: #f8faf8;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .stat-card h3 {
+            margin: 0 0 8px;
+            font-size: 0.95rem;
+            color: var(--ink);
+        }
+
+        .stat-card .unit {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .chart {
+            height: 120px;
+            display: flex;
+            align-items: end;
+            gap: 8px;
+            margin: 8px 0 12px;
+        }
+
+        .bar {
+            flex: 1;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .bar.actual {
+            background: var(--accent-strong);
+        }
+
+        .bar.target {
+            background: #bdd0bf;
+        }
+
+        .stat-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+
+        .stat-meta strong {
+            color: var(--ink);
         }
 
         .legal-footer {
@@ -158,6 +244,8 @@
             padding: 24px 20px 10px;
             border-top: 1px solid var(--border);
             color: var(--muted);
+            text-align: center;
+            font-size: 0.9rem;
         }
 
         .legal-footer p,
@@ -186,12 +274,18 @@
 
         @media (max-width: 850px) {
             .hero-card,
-            main {
+            main,
+            .stats-grid {
                 grid-template-columns: 1fr;
             }
 
             .hero-card {
                 padding: 24px;
+            }
+
+            .stats-header {
+                align-items: start;
+                flex-direction: column;
             }
         }
     </style>
@@ -209,7 +303,7 @@
                     We turn complex operational data into the decisions that move sustainability
                     goals from aspiration to measurable progress.
                 </p>
-                <a class="cta" href="#">Request a demo</a>
+                <a class="cta" href="mailto:hello@novagrid.com?subject=NovaGrid%20Demo%20Request">Request a demo</a>
             </div>
 
             <div class="hero-panel">
@@ -228,6 +322,69 @@
             </div>
         </div>
     </header>
+
+    <section class="stats-section">
+        <div class="stats-shell">
+            <div class="stats-header">
+                <h2>Key Figures</h2>
+                <p>Illustrative impact metrics for the current demo.</p>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <h3>CO2 Offset</h3>
+                    <span class="unit">tons</span>
+                    <div class="chart">
+                        <div class="bar actual" style="height: 76%"></div>
+                        <div class="bar target" style="height: 56%"></div>
+                    </div>
+                    <div class="stat-meta">
+                        <span><strong>Actual</strong> 12,400</span>
+                        <span><strong>Target</strong> 15,000</span>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Renewable Energy</h3>
+                    <span class="unit">GWh</span>
+                    <div class="chart">
+                        <div class="bar actual" style="height: 68%"></div>
+                        <div class="bar target" style="height: 50%"></div>
+                    </div>
+                    <div class="stat-meta">
+                        <span><strong>Actual</strong> 48.0</span>
+                        <span><strong>Target</strong> 60.0</span>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Companies Onboarded</h3>
+                    <span class="unit">count</span>
+                    <div class="chart">
+                        <div class="bar actual" style="height: 64%"></div>
+                        <div class="bar target" style="height: 48%"></div>
+                    </div>
+                    <div class="stat-meta">
+                        <span><strong>Actual</strong> 120</span>
+                        <span><strong>Target</strong> 150</span>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Facilities Monitored</h3>
+                    <span class="unit">sites</span>
+                    <div class="chart">
+                        <div class="bar actual" style="height: 82%"></div>
+                        <div class="bar target" style="height: 62%"></div>
+                    </div>
+                    <div class="stat-meta">
+                        <span><strong>Actual</strong> 84</span>
+                        <span><strong>Target</strong> 100</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
     <main>
         <section>
@@ -250,9 +407,9 @@
     <footer class="legal-footer">
         <p>© <span id="year"></span> NovaGrid. All rights reserved.</p>
         <div class="legal-links">
-            <a href="#">Privacy Policy</a>
+            <a href="mailto:privacy@novagrid.com?subject=Privacy%20Policy">Privacy Policy</a>
             <span>•</span>
-            <a href="#">Manage Preferences</a>
+            <a href="mailto:privacy@novagrid.com?subject=Manage%20Preferences">Manage Preferences</a>
         </div>
         <p>
             We use cookies to improve your browsing experience and help us understand how our site is used.
