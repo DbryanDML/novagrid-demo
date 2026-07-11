@@ -6,14 +6,14 @@
     <title>NovaGrid</title>
     <style>
         :root {
-            --bg: #f4f7f4;
+            --bg: #fbfcfb;
             --surface: #ffffff;
-            --ink: #13211d;
-            --muted: #5b6b63;
-            --accent: #1f9d7a;
-            --accent-dark: #0f6f58;
-            --border: #d7e3dc;
-            --shadow: 0 22px 60px rgba(15, 38, 30, 0.12);
+            --ink: #17231d;
+            --muted: #64736a;
+            --accent: #dfeadf;
+            --accent-strong: #6e9a78;
+            --border: #e4ebe4;
+            --shadow: 0 8px 28px rgba(18, 41, 28, 0.04);
         }
 
         * {
@@ -23,56 +23,53 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background:
-                radial-gradient(circle at top left, rgba(31, 157, 122, 0.18), transparent 28%),
-                linear-gradient(180deg, #f8fbf8 0%, #eef4ee 100%);
+            background: var(--bg);
             color: var(--ink);
         }
 
         .hero {
-            padding: 42px 20px;
+            padding: 72px 20px 28px;
         }
 
         .hero-card {
-            max-width: 1180px;
+            max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.2fr 0.9fr;
-            gap: 28px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 34px;
             align-items: center;
-            padding: 48px;
-            background: rgba(255, 255, 255, 0.9);
+            padding: 32px;
+            background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 28px;
+            border-radius: 24px;
             box-shadow: var(--shadow);
-            backdrop-filter: blur(10px);
         }
 
         .eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 12px;
+            padding: 7px 12px;
             border-radius: 999px;
-            background: rgba(31, 157, 122, 0.12);
-            color: var(--accent-dark);
-            font-size: 0.76rem;
+            background: var(--accent);
+            color: var(--accent-strong);
+            font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.09em;
             text-transform: uppercase;
         }
 
         h1 {
-            margin: 18px 0 12px;
-            font-size: clamp(2.5rem, 5vw, 4.4rem);
-            line-height: 1.02;
-            letter-spacing: -0.04em;
+            margin: 18px 0 14px;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            line-height: 1.03;
+            letter-spacing: -0.05em;
         }
 
         .hero-copy p {
-            max-width: 680px;
-            font-size: 1.08rem;
-            line-height: 1.75;
+            max-width: 640px;
+            font-size: 1.03rem;
+            line-height: 1.85;
             color: var(--muted);
             margin: 0 0 26px;
         }
@@ -83,45 +80,86 @@
             justify-content: center;
             padding: 14px 22px;
             border-radius: 12px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            background: var(--accent-strong);
             color: white;
             text-decoration: none;
             font-weight: 700;
-            box-shadow: 0 10px 24px rgba(31, 157, 122, 0.28);
+            border: 1px solid rgba(15, 40, 23, 0.1);
         }
 
         .hero-panel {
-            background: linear-gradient(180deg, #16332a 0%, #0f251e 100%);
-            color: white;
-            border-radius: 22px;
-            padding: 22px;
+            background: linear-gradient(180deg, #f7faf7 0%, #f3f7f3 100%);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 18px;
             display: grid;
-            gap: 14px;
+            gap: 12px;
         }
 
         .metric {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 18px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: white;
+            padding: 16px;
+            border-radius: 14px;
+            border-left: 3px solid var(--accent-strong);
         }
 
         .metric strong {
             display: block;
-            font-size: 1.8rem;
-            margin-bottom: 6px;
+            font-size: 1.55rem;
+            margin-bottom: 5px;
+            color: var(--accent-strong);
         }
 
         .metric span {
-            color: rgba(255, 255, 255, 0.75);
+            color: var(--muted);
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.55;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 18px 20px 56px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        section h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.25rem;
+        }
+
+        section p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0 20px 36px;
+            color: #78857b;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 850px) {
-            .hero-card {
+            .hero-card,
+            main {
                 grid-template-columns: 1fr;
-                padding: 28px;
+            }
+
+            .hero-card {
+                padding: 24px;
             }
         }
     </style>
@@ -161,16 +199,19 @@
 
     <main>
         <section>
-            <h2>Welcome</h2>
-            <p>Lorem ipsum dolor sit amet. This is placeholder text that the developer
-            definitely meant to replace before disappearing forever.</p>
-            <a href="#">Click here for something</a>
+            <h2>What we do</h2>
+            <p>
+                NovaGrid helps organizations understand where energy is being used,
+                where emissions are coming from, and what to change next.
+            </p>
         </section>
 
         <section>
-            <h2>Our Impact</h2>
-            <p>We have saved lots of energy. Like, a LOT. Trust us.</p>
-            <!-- TODO: some kind of numbers here? investors like numbers -->
+            <h2>Why it matters</h2>
+            <p>
+                From reporting obligations to operational efficiency, teams need a cleaner,
+                more confident way to turn sustainability goals into action.
+            </p>
         </section>
     </main>
 
