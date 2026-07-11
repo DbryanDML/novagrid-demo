@@ -152,6 +152,38 @@
             font-size: 0.9rem;
         }
 
+        .legal-footer {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 20px 10px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+        }
+
+        .legal-footer p,
+        .legal-footer a {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 10px 0 8px;
+        }
+
+        .legal-footer a {
+            color: var(--accent-strong);
+            text-decoration: none;
+        }
+
+        .legal-footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 850px) {
             .hero-card,
             main {
@@ -215,9 +247,22 @@
         </section>
     </main>
 
-    <footer>
-        <p>© NovaGrid 2025. All rights reserved probably.</p>
+    <footer class="legal-footer">
+        <p>© <span id="year"></span> NovaGrid. All rights reserved.</p>
+        <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <span>•</span>
+            <a href="#">Manage Preferences</a>
+        </div>
+        <p>
+            We use cookies to improve your browsing experience and help us understand how our site is used.
+            By continuing to browse, you consent to our use of cookies.
+        </p>
     </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
