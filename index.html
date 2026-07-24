@@ -39,7 +39,9 @@
             gap: 34px;
             align-items: center;
             padding: 32px;
-            background: var(--surface);
+            background: linear-gradient(135deg, rgba(10, 22, 15, 0.78) 0%, rgba(10, 22, 15, 0.4) 100%), url('images.jpg');
+            background-size: cover;
+            background-position: center;
             border: 1px solid var(--border);
             border-radius: 24px;
             box-shadow: var(--shadow);
@@ -64,13 +66,14 @@
             font-size: clamp(2.8rem, 5vw, 4.2rem);
             line-height: 1.03;
             letter-spacing: -0.05em;
+            color: white;
         }
 
         .hero-copy p {
             max-width: 640px;
             font-size: 1.03rem;
             line-height: 1.85;
-            color: var(--muted);
+            color: rgba(255, 255, 255, 0.85);
             margin: 0 0 26px;
         }
 
@@ -88,8 +91,8 @@
         }
 
         .hero-panel {
-            background: linear-gradient(180deg, #f7faf7 0%, #f3f7f3 100%);
-            border: 1px solid var(--border);
+            background: rgba(12, 26, 18, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 20px;
             padding: 18px;
             display: grid;
